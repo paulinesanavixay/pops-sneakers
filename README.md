@@ -84,12 +84,12 @@ Par manque de temps l'administrateur n'a pu être crée.
 
 ## Fonctionnalités principales
 
-### 1. Interaction avec la base de données
+###  Interaction avec la base de données
 - L'application utilise Doctrine ORM pour communiquer avec la base de données.
 - Les opérations CRUD permettent de gérer les sneakers, et la base de données est régulièrement mise à jour via les Migrations Doctrine.
 
 
-### 4. Fonctionnalité de newsletter
+###  Fonctionnalité de newsletter
 -  **NewsletterController** gère les abonnements des utilisateurs. Les abonnés sont stockés dans la base de données.
 
 ## Configuration de la base de données
