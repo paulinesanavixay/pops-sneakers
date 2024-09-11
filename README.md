@@ -1,51 +1,51 @@
 
-# Pop's Sneakers - Symfony Project
+# Pop's Sneakers - Projet Symfony
 
-This is a Symfony-based project for **Pop's Sneakers**, an e-commerce platform for buying and selling sneakers. It features admin functionality, user authentication, sneaker management, and more.
+Ceci est un projet basé sur Symfony pour **Pop's Sneakers**, une plateforme de commerce électronique dédiée à l'achat et la vente de sneakers. Elle comprend des fonctionnalités d'administration, d'authentification utilisateur, de gestion des sneakers, et plus encore.
 
-## Table of Contents
+## Table des matières
 - [Installation](#installation)
-- [Project Overview](#project-overview)
-- [Key Features](#key-features)
-- [Database Setup](#database-setup)
-- [Admin Panel & Security](#admin-panel--security)
+- [Aperçu du projet](#aperçu-du-projet)
+- [Fonctionnalités principales](#fonctionnalités-principales)
+- [Configuration de la base de données](#configuration-de-la-base-de-données)
+- [Panneau d'administration et sécurité](#panneau-dadministration-et-sécurité)
 - [Fixtures](#fixtures)
-- [Contributing](#contributing)
-- [License](#license)
+- [Contribuer](#contribuer)
+- [Licence](#licence)
 
 ## Installation
 
-To get the project up and running, follow these steps:
+Pour démarrer le projet, suivez ces étapes :
 
-### Requirements
-- PHP 8.1 or above
+### Pré-requis
+- PHP 8.1 ou plus
 - Composer
-- MySQL (or another database)
-- Symfony CLI (optional)
+- MySQL (ou une autre base de données)
+- Symfony CLI (facultatif)
 
-### Steps
-1. Clone the repository:
+### Étapes
+1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/yourusername/your-symfony-project.git
+   git clone https://github.com/votreutilisateur/votre-projet-symfony.git
    ```
 
-2. Navigate to the project directory:
+2. Accédez au répertoire du projet :
    ```bash
-   cd your-symfony-project
+   cd votre-projet-symfony
    ```
 
-3. Install dependencies:
+3. Installez les dépendances :
    ```bash
    composer install
    ```
 
-4. Set up your `.env.local` file for database connection:
-   - Example for local MySQL setup:
+4. Configurez votre fichier `.env.local` pour la connexion à la base de données :
+   - Exemple pour une configuration locale avec MySQL :
      ```bash
-     DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
+     DATABASE_URL="mysql://utilisateur_bd:mot_de_passe_bd@127.0.0.1:3306/nom_bd"
      ```
 
-5. Run the following commands to set up the database:
+5. Exécutez les commandes suivantes pour configurer la base de données :
    ```bash
    php bin/console doctrine:database:create
    php bin/console make:migration
@@ -53,73 +53,73 @@ To get the project up and running, follow these steps:
    php bin/console doctrine:fixtures:load
    ```
 
-6. Start the local Symfony server:
+6. Démarrez le serveur local Symfony :
    ```bash
    symfony server:start
    ```
-   Or using PHP's built-in server:
+   Ou utilisez le serveur intégré de PHP :
    ```bash
    php -S localhost:8000 -t public
    ```
 
-## Project Overview
+## Aperçu du projet
 
-**Pop's Sneakers** is an e-commerce web application where users can browse and purchase sneakers, as well as sell their own. It features user authentication, an admin panel for managing the inventory, and a database-backed structure for storing sneaker data.
+**Pop's Sneakers** est une application web de commerce électronique où les utilisateurs peuvent parcourir et acheter des sneakers, ainsi que vendre leurs propres produits. Elle dispose d'une authentification utilisateur, d'un panneau d'administration pour la gestion des stocks, et d'une structure basée sur une base de données pour stocker les informations sur les sneakers.
 
-### Main Features:
-- **Sneaker Listings**: Users can browse a collection of sneakers.
-- **Search and Filter**: Search by category, color, price, etc.
-- **User Authentication**: Register and log in to manage your sneaker collection or make purchases.
-- **Admin Panel**: Manage sneakers, users, and view sales analytics.
-- **Newsletter Subscription**: Visitors can subscribe to a newsletter for updates.
+### Fonctionnalités principales :
+- **Liste des sneakers** : Les utilisateurs peuvent parcourir une collection de sneakers.
+- **Recherche et filtrage** : Rechercher par catégorie, couleur, prix, etc.
+- **Authentification utilisateur** : Inscription et connexion pour gérer votre collection de sneakers ou effectuer des achats.
+- **Panneau d'administration** : Gérer les sneakers, les utilisateurs, et consulter les analyses des ventes.
+- **Abonnement à la newsletter** : Les visiteurs peuvent s'abonner à une newsletter pour recevoir des mises à jour.
 
-## Key Features
+## Fonctionnalités principales
 
-### 1. Security and Admin Panel
-- The **admin panel** is secured with user roles. Only users with the `ROLE_ADMIN` can access the admin routes. These routes allow for managing sneaker data, adding new sneakers, and handling user reports.
-- Security is managed using Symfony's security component, ensuring encrypted passwords and session management.
-  
-### 2. Database Interaction
-- The application uses Doctrine ORM to communicate with the database. The **Sneaker** and **SneakerSell** entities represent the core of the system, with each entity mapping to a database table.
-- CRUD operations are handled for managing sneakers, and the database is regularly updated through Doctrine Migrations.
+### 1. Sécurité et Panneau d'administration
+- Le **panneau d'administration** est sécurisé par des rôles utilisateurs. Seuls les utilisateurs avec le rôle `ROLE_ADMIN` peuvent accéder aux routes d'administration. Ces routes permettent de gérer les données des sneakers, d'ajouter de nouvelles sneakers, et de gérer les rapports des utilisateurs.
+- La sécurité est gérée par le composant de sécurité de Symfony, garantissant des mots de passe chiffrés et une gestion des sessions.
 
-### 3. API Integration (Optional if Applicable)
-- If your project integrates any external APIs (for example, payment gateway), you can add a section explaining it.
+### 2. Interaction avec la base de données
+- L'application utilise Doctrine ORM pour communiquer avec la base de données. Les entités **Sneaker** et **SneakerSell** représentent le cœur du système, chaque entité correspondant à une table de la base de données.
+- Les opérations CRUD permettent de gérer les sneakers, et la base de données est régulièrement mise à jour via les Migrations Doctrine.
 
-### 4. Newsletter Feature
-- The **NewsletterController** handles user subscriptions. Subscribers are stored in the database, and email notifications can be triggered via Symfony Messenger.
+### 3. Intégration d'API (facultatif)
+- Si votre projet intègre des API externes (par exemple, une passerelle de paiement), vous pouvez ajouter une section pour l'expliquer.
 
-## Database Setup
+### 4. Fonctionnalité de newsletter
+- Le **NewsletterController** gère les abonnements des utilisateurs. Les abonnés sont stockés dans la base de données et des notifications par email peuvent être déclenchées via Symfony Messenger.
 
-This project uses MySQL by default, but you can switch to other databases by adjusting your `.env.local` file.
+## Configuration de la base de données
 
-For local development, ensure you have a running MySQL server, and configure your `.env.local` file as follows:
+Ce projet utilise MySQL par défaut, mais vous pouvez passer à d'autres bases de données en ajustant votre fichier `.env.local`.
+
+Pour un développement local, assurez-vous d'avoir un serveur MySQL en cours d'exécution, et configurez votre fichier `.env.local` comme suit :
 
 ```bash
-DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
+DATABASE_URL="mysql://utilisateur_bd:mot_de_passe_bd@127.0.0.1:3306/nom_bd"
 ```
 
-After setting up your database, run the migrations and load the fixtures as mentioned in the [Installation](#installation) section.
+Après avoir configuré votre base de données, exécutez les migrations et chargez les fixtures comme mentionné dans la section [Installation](#installation).
 
 ## Fixtures
 
-Fixtures are pre-configured to load sample data into the database. Use the following command to load the fixtures:
+Les fixtures sont préconfigurées pour charger des données d'exemple dans la base de données. Utilisez la commande suivante pour charger les fixtures :
 
 ```bash
 php bin/console doctrine:fixtures:load
 ```
 
-This will populate the database with sample sneaker data, making it easier to test the application.
+Cela populera la base de données avec des données de sneakers d'exemple, facilitant ainsi les tests de l'application.
 
-## Contributing
+## Contribuer
 
-Feel free to contribute to this project! If you'd like to contribute, follow these steps:
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/new-feature`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature/new-feature`).
-5. Open a pull request.
+N'hésitez pas à contribuer à ce projet ! Si vous souhaitez contribuer, suivez ces étapes :
+1. Forkez le dépôt.
+2. Créez votre branche de fonctionnalité (`git checkout -b fonctionnalité/nouvelle-fonctionnalité`).
+3. Commitez vos changements (`git commit -m 'Ajouter une nouvelle fonctionnalité'`).
+4. Poussez sur la branche (`git push origin fonctionnalité/nouvelle-fonctionnalité`).
+5. Ouvrez une pull request.
 
-## License
+## Licence
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
