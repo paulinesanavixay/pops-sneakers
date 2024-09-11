@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="search-bar">
+        <form class="form-inline my-2 my-lg-0" method="POST" action="">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search sneakers..." aria-label="Search" name="query">
+            <button class="btn btn-custom my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Public Submitted Sneakers</h1>
+        <p class="text-center">This platform is dedicated to our community of sneaker enthusiasts who wish to sell their pairs among fellow collectors and fans</p>
+
+        {% if submittedSneakers is empty %}
+            <p class="text-center">No sneakers have been submitted yet.</p>
+        {% else %}
+            <div class="row justify-content-center">
+                {% for sneaker in submittedSneakers %}
+                    <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                        <div class="card">
+                            <img src="{{ asset('images/sell/' ~ sneaker.image) }}" class="card-img-top" alt="{{ sneaker.name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ sneaker.name }}</h5>
+                                <p class="card-text">Brand: {{ sneaker.brand }}</p>
+                                <p class="card-text">Price: ${{ sneaker.price }}</p>
+                                <p class="card-text">Color: {{ sneaker.color }}</p>
+                                <p class="card-text">Condition: {{ sneaker.condition }}/10</p>
+                                <p class="card-text">Size: {{ sneaker.size }}</p>
+                                <p class="card-text">Seller: {{ sneaker.pseudo }}</p>
+                                <p class="card-text">Contact: {{ sneaker.emailCustomer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Return to Brand Page Button -->
+        <div class="btn-container">
+            <a href="{{ path('brandList') }}" class="btn btn-custom">
+                Return to Brand Selection
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 300px;
+            margin: 15px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 300px;
+            margin: 15px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            transform: scale(1.05);
+        }
+
+        .btn-custom:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            max-width: 600px; /* Augmentation de la largeur maximale */
+            border-radius: 30px;
+            padding: 10px 20px;
+            border: 1px solid #ced4da;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.5);
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .search-bar button {
+            margin-left: 10px;
+            border-radius: 30px;
+            padding: 10px 20px;
+            border: none;
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+    </style>
+
+{% endblock %}

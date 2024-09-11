@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        .form-container {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #6c757d;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .form-label {
+            color: #495057;
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            transform: scale(1.05);
+        }
+
+        .btn-custom:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .newsletter-image {
+            max-width: 35%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+        }
+    </style>
+
+    <div class="container form-container mt-5">
+        <h1 class="text-center text-danger">Sell Your Sneakers</h1>
+        <p>Got sneakers to sell? Fill out this form and make someone’s day with your pair!</p>
+        <img src="{{ asset('images/nbpic.png') }}" alt="Newsletter Image" class="newsletter-image">
+
+        <form action="{{ path('sell_sneaker') }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="model_name">Model Name</label>
+                <input type="text" id="model_name" name="model_name" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="brand">Brand</label>
+                <input type="text" id="brand" name="brand" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" class="form-control" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" id="color" name="color" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="condition">Condition (out of 10)</label>
+                <input type="number" id="condition" name="condition" class="form-control" required min="1" max="10">
+            </div>
+
+            <div class="form-group">
+                <label for="size">Size</label>
+                <input type="text" id="size" name="size" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" id="category" name="category" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="emailCustomer">Email</label>
+                <input type="email" id="emailCustomer" name="emailCustomer" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pseudo">Pseudo</label>
+                <input type="text" id="pseudo" name="pseudo" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Sneaker Image</label>
+                <input type="file" id="image" name="image" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="proof_of_purchase">Proof of Purchase</label>
+                <input type="file" id="proof_of_purchase" name="proof_of_purchase" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-custom mt-4">Submit</button>
+        </form>
+
+    </div>
+{% endblock %}

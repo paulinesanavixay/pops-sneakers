@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About - Pop's Sneakers {% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <!-- Introduction Section -->
+        <div class="row mb-5 align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4 font-weight-bold">About Pop's Sneakers</h1>
+                <p class="lead">Welcome to Pops Sneaker, your premier destination for the hottest and rarest sneakers on the market. Whether you're a collector or just looking for the perfect pair to complete your outfit, we've got you covered.</p>
+                <p>At Pops Sneaker, we pride ourselves on offering an unparalleled selection of authentic sneakers from top brands like Nike, Adidas, Yeezy, and more. Our passion for sneakers is matched only by our commitment to providing our customers with the best shopping experience possible.</p>
+                <p>Our team is made up of sneaker enthusiasts who understand the culture and know exactly what you're looking for. We source our products from trusted suppliers and ensure that every pair we sell is 100% authentic and in perfect condition.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('images/about/about4.jpg') }}" class="img-fluid rounded shadow" alt="Sneakers">
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <div class="row mb-5">
+            <div class="col-md-12 text-center">
+                <h2 class="display-5">Our Story: From Passion to Pops Sneakers</h2>
+                <p class="text-muted">The journey of Pops Sneakers, told through our passion for sneakers and commitment to authenticity.</p>
+            </div>
+        </div>
+
+        <!-- Story Content with Images -->
+        <div class="row mb-5">
+            <div class="col-md-6 order-md-2">
+                <img src="{{ asset('images/about/about2.jpg') }}" class="img-fluid rounded shadow" alt="Sneaker Collection">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h3>The Beginning: A Love for Sneakers</h3>
+                <p>Growing up, sneakers were more than just footwear—they were a symbol of self-expression, culture, and identity. Whether it was the thrill of unboxing a fresh pair of Jordans or the envy of spotting the latest Yeezys on the street, we lived and breathed sneakers. Each release told a story, and every pair became a piece of our history.</p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="{{ asset('images/about/about3.jpg') }}" class="img-fluid rounded shadow" alt="Sneaker Store">
+            </div>
+            <div class="col-md-6">
+                <h3>The Turning Point: From Collectors to Curators</h3>
+                <p>As collectors, we were always on the hunt for the next exclusive drop. But as the sneaker world exploded, it became harder to find authentic, high-quality sneakers without getting lost in a sea of fakes and hype. That’s when we realized—if we were having this problem, countless others must be too.</p>
+                <p>So, we made a decision: instead of just collecting sneakers, we’d curate them. We’d build a place where authenticity is guaranteed, quality is non-negotiable, and every sneaker has a story to tell. And that’s how Pops Sneaker was born.</p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 order-md-2">
+                <img src="{{ asset('images/about/about1.jpg') }}" class="img-fluid rounded shadow" alt="Sneaker Community">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h3>The Mission: More Than Just Sneakers</h3>
+                <p>At Pops Sneaker, we’re not just about selling shoes—we’re about connecting people to the culture, to the memories, and to the moments that make sneakerhead life so unique. We believe every sneaker has a story, and every sneakerhead deserves a chance to find theirs.</p>
+                <p>From limited-edition releases to classic retros, we scour the globe to bring you the most exclusive and authentic sneakers. But our mission goes beyond the kicks. We’re here to foster a community of enthusiasts who, like us, see sneakers as a way of life.</p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="{{ asset('images/about/about5.jpg') }}" class="img-fluid rounded shadow" alt="Future of Sneakers">
+            </div>
+            <div class="col-md-6">
+                <h3>The Future: Growing with the Culture</h3>
+                <p>The sneaker world is constantly evolving, and so are we. As trends shift and new icons emerge, Pops Sneaker remains committed to staying at the forefront of the culture. We’re not just keeping up with the times—we’re helping to shape them.</p>
+                <p>Our journey started with a passion, grew into a mission, and continues to expand as we connect with sneaker lovers around the world. Whether you’re here for the latest drop, a classic pair you’ve always wanted, or just to soak in the culture, we’re glad you’re part of the Pops Sneaker family.</p>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="row mb-5">
+            <div class="col-md-12 text-center">
+                <h2 class="display-5">Join Us: Be Part of the Story</h2>
+                <p class="lead">The story of Pops Sneaker is still being written, and we want you to be a part of it. Every pair we sell, every release we celebrate, every step we take forward is all thanks to you. So lace up, step in, and let’s walk this journey together.</p>
+                <p><strong>Welcome to Pops Sneaker—where every sneaker tells a story, and every story starts with you.</strong></p>
+                <a href="#" class="btn btn-dark btn-lg"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="btn btn-dark btn-lg"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="btn btn-dark btn-lg"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

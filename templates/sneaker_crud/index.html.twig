@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sneaker index{% endblock %}
+
+{% block body %}
+    <h1>Sneaker index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Size</th>
+                <th>Condition</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sneaker in sneakers %}
+            <tr>
+                <td>{{ sneaker.id }}</td>
+                <td>{{ sneaker.name }}</td>
+                <td>{{ sneaker.description }}</td>
+                <td>{{ sneaker.size }}</td>
+                <td>{{ sneaker.condition }}</td>
+                <td>{{ sneaker.price }}</td>
+                <td>{{ sneaker.image }}</td>
+                <td>
+                    <a class="btn btn-success" href="{{ path('app_sneaker_crud_show', {'id': sneaker.id}) }}">show</a>
+                    <a class="btn btn-warning" href="{{ path('app_sneaker_crud_edit', {'id': sneaker.id}) }}">edit</a>
+                    <a class="btn btn-danger" href="{{ path('app_sneaker_crud_delete', {'id': sneaker.id}) }}">delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_sneaker_crud_new') }}">Create new</a>
+{% endblock %}

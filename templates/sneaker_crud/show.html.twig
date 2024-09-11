@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sneaker{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header text-center bg-danger text-white">
+                        <h2>{{ sneaker.name }}</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ sneaker.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <td>{{ sneaker.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>{{ sneaker.description }}</td>
+                            </tr>
+                            <tr>
+                                <th>Size</th>
+                                <td>{{ sneaker.size }}</td>
+                            </tr>
+                            <tr>
+                                <th>Condition</th>
+                                <td>{{ sneaker.condition }}/10</td>
+                            </tr>
+                            <tr>
+                                <th>Price</th>
+                                <td>\${{ sneaker.price }}</td>
+                            </tr>
+                            <tr>
+                                <th>Image</th>
+                                <td>
+                                    {% if sneaker.image %}
+                                        <img src="{{ asset('images/sneakers/' ~ sneaker.image) }}" alt="{{ sneaker.name }}" class="img-fluid" style="max-width: 150px;">
+                                    {% else %}
+                                        <p>No image available</p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="{{ path('app_sneaker_crud_index') }}" class="btn btn-outline-secondary">Back to list</a>
+                        <div>
+                            <a href="{{ path('app_sneaker_crud_edit', {'id': sneaker.id}) }}" class="btn btn-outline-primary">Edit</a>
+                            {{ include('sneaker_crud/_delete_form.html.twig', {'class': 'd-inline'}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Style pour la carte */
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .table-striped {
+            border-radius: 15px;
+        }
+
+        /* Style pour les images */
+        .img-fluid {
+            border-radius: 10px;
+        }
+
+        /* Boutons de navigation */
+        .btn-outline-secondary, .btn-outline-primary {
+            border-radius: 30px;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-secondary:hover, .btn-outline-primary:hover {
+            background-color: #ff416c;
+            color: white;
+            border-color: #ff416c;
+        }
+
+    </style>
+{% endblock %}

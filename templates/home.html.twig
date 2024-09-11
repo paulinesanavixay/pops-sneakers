@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Bootstrap Carousel -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('images/slider/slider1.jpg') }}" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/slider/slider2.jpg') }}" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/slider/slider3.jpg') }}" class="d-block w-100" alt="Slide 3">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/slider/slider4.jpg') }}" class="d-block w-100" alt="Slide 4">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <!-- Title Section -->
+        <div class="text-center mb-5">
+            <h1 class="text-black">Welcome to Pop's Sneakers</h1>
+            <h5 class="text-black">Discover, shop, and resell exclusive kicks that set you apart from the crowd</h5>
+            <img src="{{ asset('images/logo.png') }}" alt="Pop's Sneakers Logo" height="350px">
+            <p>Your ultimate destination for premium and rare sneakers.
+                Whether you're a collector or a casual enthusiast, we offer a curated selection of the most sought-after
+                kicks to elevate your footwear game. Dive into our collection and experience the passion for sneakers
+                firsthand!
+            </p>
+
+        </div>
+
+        <!-- New Releases Section -->
+        <div class="mt-5">
+            <h3 class="text-center mb-4">Our Latest Sneaker Arrivals!</h3>
+            <h5 class="text-center mb-4">"Discover the latest trends so you can always stay at the forefront of fashion!</h5>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="{{ asset('images/sneakers/sl72.png') }}" class="card-img-top img-fluid" alt="Adidas SL 72">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Adidas SL 72</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <a href="#" class="btn btn-custom w-100 mt-auto">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="{{ asset('images/sneakers/jordan1_travis.png') }}" class="card-img-top img-fluid" alt="Air Jordan 1 Travis Scott">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Air Jordan 1 Travis Scott</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <a href="#" class="btn btn-custom w-100 mt-auto">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="{{ asset('images/sneakers/jordan1_chicago.png') }}" class="card-img-top img-fluid" alt="Jordan 1 Chicago 1985">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Jordan 1 Chicago 1985</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <a href="#" class="btn btn-custom w-100 mt-auto">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="{{ asset('images/sneakers/nb992.png') }}" class="card-img-top img-fluid" alt="New Balance 992">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">New Balance 992</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <a href="#" class="btn btn-custom w-100 mt-auto">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sell Your Sneakers Section -->
+        <div class="sell-section mt-5">
+            <div class="text-center mb-4">
+                <h3>Sell Your Sneakers!</h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-start">
+                <div class="w-50 pe-3">
+                    <p>Got a pair of exclusive kicks you want to sell? Reach a wide audience and get the best value for your sneakers.</p>
+                    <p>We offer our community a service for reselling sneakers between individuals. </p>
+                    <p>If you want to part with your old pairs and make someone else happy, simply fill out this form.</p>
+                    <a href="{{ path('sell') }}" class="btn btn-custom small-btn">View More</a>
+                </div>
+                <div class="w-50 ps-3 text-end">
+                    <img src="{{ asset('images/sell.png') }}" alt="Sell Your Sneakers" class="img-fluid img-thumbnail" style="max-width: 500px;">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- About Pop's Sneakers Section -->
+        <div class="about-section mt-5">
+            <h3 class="text-black text-center mb-4">About Pop's Sneakers</h3>
+            <p>Welcome to Pop's Sneakers, your top destination for the rarest and hottest sneakers.
+                We offer a curated selection of authentic sneakers from top brands like Nike, Adidas, and Yeezy.
+                As sneaker trends evolve, so do we. Pop's Sneakers is dedicated to staying ahead.
+            </p>
+
+            <div class="row mt-4">
+                <div class="col-md-6 mb-3">
+                    <img src="{{ asset('images/about/about1.jpg') }}" class="img-fluid rounded" alt="Sneaker Collection">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <img src="{{ asset('images/about/about2.jpg') }}" class="img-fluid rounded" alt="Sneaker Community">
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{{ path('aboutpage') }}" class="btn btn-custom">View More</a>
+        </div>
+    </div>
+    <div class="container text-center">
+        <h2>Why Trust Pop's Sneakers?</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fas fa-lock" style="font-size: 3rem; color: #dc3545;"></i>
+                <h4 style="margin-top: 15px; font-size: 1.5rem; color: #333;">Secure Payment</h4>
+                <p style="font-size: 1rem; color: #666;">Your payment information is fully encrypted and secure.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-undo" style="font-size: 3rem; color: #dc3545;"></i>
+                <h4 style="margin-top: 15px; font-size: 1.5rem; color: #333;">24h Refund Policy</h4>
+                <p style="font-size: 1rem; color: #666;">Get a full refund within 24 hours of your purchase if you're not satisfied.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-exchange-alt" style="font-size: 3rem; color: #dc3545;"></i>
+                <h4 style="margin-top: 15px; font-size: 1.5rem; color: #333;">Easy Exchange</h4>
+                <p style="font-size: 1rem; color: #666;">Easily exchange any product within 30 days.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Custom Styles -->
+    <style>
+        .btn-custom {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c); : none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            transform: scale(1.05);
+        }
+
+        .sell-section img, .about-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .container {
+            margin-top: 2rem;
+        }
+    </style>
+{% endblock %}

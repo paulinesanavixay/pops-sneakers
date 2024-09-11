@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        .brand-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .brand-logo:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-logo1 {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            transform: scale(1.05);
+        }
+
+        .btn-custom:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+
+    <div class="container text-center mt-5">
+        <h1>Select your sneaker's brand</h1>
+
+        {% if brands is empty %}
+            <p>No brands found in the database.</p>
+        {% else %}
+            <div class="row justify-content-center mt-4">
+                {% for brand in brands %}
+                    <div class="col-4 col-md-2 mb-4 d-flex justify-content-center">
+                        <a href="{{ path('sneaker_list', { brandName: brand.name }) }}">
+                            <img src="{{ asset('images/brandLogo/' ~ brand.logo) }}" alt="{{ brand.name }} logo" class="img-fluid rounded brand-logo">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="mt-4 btn-container">
+            <a href="{{ path('public_sneakers_list') }}" class="btn btn-custom">
+                View Submitted Sneakers
+            </a>
+        </div>
+    </div>
+{% endblock %}
